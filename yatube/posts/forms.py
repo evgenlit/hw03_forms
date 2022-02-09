@@ -5,7 +5,7 @@ from .models import Post, Group
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ("text","group",)
+        fields = ("text", "group",)
         group = forms.ModelChoiceField(
             queryset=Group.objects.all(),
             required=False,
