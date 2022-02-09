@@ -79,7 +79,7 @@ def post_create(request):
             'is_edit': False
         }
         return render(request, 'posts/create_post.html', context)
-    
+
     form = PostForm()
     context = {
         'form': form,
