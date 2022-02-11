@@ -13,7 +13,7 @@
             {% for field in form %} 
               {% for error in field.errors %}            
                 <div class="alert alert-danger">
-                  {{ error|escape }}
+                  {{ field.label }}: {{ error|escape }}
                 </div>
               {% endfor %}
             {% endfor %}

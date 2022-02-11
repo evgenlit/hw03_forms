@@ -6,24 +6,13 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ("text", "group",)
-        group = forms.ModelChoiceField(
-            queryset=Group.objects.all(),
-            required=False,
-            to_field_name="id_group",
-        )
-        widgets = {
-            'text': forms.Textarea(),
-        }
 
         labels = {
-            "group": "Группа",
             "text": "Текст",
+            "group": "Группа",
         }
 
-    def clean_text(self):
-        text = self.cleaned_data['text']
-        if text == '':
-            raise forms.ValidationError(
-                'Заполните, пожалуйста, обязательное поле!'
-            )
-        return text
+        help_texts = {
+            'text': 'Напишите сюда текст поста',
+            'group': 'Выберите группу для поста',
+        }

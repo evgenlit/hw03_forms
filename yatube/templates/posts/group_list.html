@@ -9,7 +9,7 @@
     <h1>{{ group.title }}</h1>
     <p>{{ group.description }}</p>
     {% for post in page_obj %}
-      {% include "posts/article.html" with post=post %}
+      {% include "posts/includes/article.html" with post=post %}
       {% if not forloop.last %}<hr>{% endif %}
     {% endfor %}
     {% include 'posts/includes/paginator.html' %}
