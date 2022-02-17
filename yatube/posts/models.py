@@ -29,7 +29,7 @@ class Post(models.Model):
         related_name='posts')
 
     def __str__(self):
-        return self.text
+        return self.text[:15]
 
     class Meta:
         ordering = ('-pub_date',)
